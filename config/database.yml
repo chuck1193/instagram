@@ -20,6 +20,7 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
   <<: *default
@@ -81,5 +82,4 @@ test:
 production:
   <<: *default
   database: instagram_production
-  username: instagram
-  password: <%= ENV['INSTAGRAM_DATABASE_PASSWORD'] %>
+  
